@@ -3,6 +3,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import withRedux from "next-redux-wrapper";
 import withReduxSaga from "next-redux-saga";
+import { GlobalStyle } from "../src/ui/yousty";
 
 import createStore from "../redux/store";
 
@@ -25,6 +26,7 @@ class MyApp extends App<AppProps> {
     const { Component, pageProps, store } = this.props;
     return (
       <Provider store={store}>
+        <GlobalStyle />
         <Component {...pageProps} />
       </Provider>
     );
