@@ -10,5 +10,6 @@ module.exports = {
   publicRuntimeConfig: {
     EXAMPLE_RUNTIME_ENV_VAR: process.env.EXAMPLE_RUNTIME_ENV_VAR,
     NODE_ENV: process.env.NODE_ENV,
+    TRACKING_ID: process.env.TRACKING_ID
   }
 }
