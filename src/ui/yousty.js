@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
-import { createGlobalStyle } from "styled-components";
-import { MOBILE_S, DEFAULT, XL } from "./breakpoints";
+import { createGlobalStyle } from "styled-components"
+import { MOBILE_S, DEFAULT, XL } from "./breakpoints"
 
 export const GlobalStyle = createGlobalStyle`
   html {
@@ -51,4 +51,4 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     background: var(--color-background, white);
   }
-`;
+`
