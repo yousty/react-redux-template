@@ -1,3 +1,9 @@
-import todos from './todos';
+import todos from './todos'
 
-export default { todos };
+type IReducersType = {
+  todos: typeof todos;
+}
+
+const reducers: IReducersType = { todos }
+
+export default reducers;

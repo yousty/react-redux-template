@@ -1,4 +1,6 @@
-import { applyMiddleware, createStore, combineReducers } from 'redux';
+import {
+  applyMiddleware, createStore, combineReducers,
+} from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { all, fork } from 'redux-saga/effects';
 import { watchAddTodoRequest } from './ducks/todos';
