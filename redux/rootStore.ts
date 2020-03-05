@@ -1,17 +1,12 @@
 import {
-  applyMiddleware, createStore, combineReducers,
+  applyMiddleware, createStore,
 } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import { all, fork } from 'redux-saga/effects';
-import { watchAddTodoRequest } from './ducks/todos';
-import reducers from './ducks';
+import rootSaga from './rootSaga'
+import rootReducer from './rootReducer'
+
+// @@TODO: middleware types
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-function* rootSaga() {
-  yield all([fork(watchAddTodoRequest)]);
-}
-
-const rootReducer = combineReducers(reducers);
-
 const bindMiddleware = (middleware: any) => {
   if (process.env.NODE_ENV !== 'production') {
     const { composeWithDevTools } = require('redux-devtools-extension');
@@ -20,6 +15,8 @@ const bindMiddleware = (middleware: any) => {
   return applyMiddleware(...middleware);
 };
 
+// @@TODO: initialState typed
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 function configureStore(initialState = {}) {
   const sagaMiddleware = createSagaMiddleware();
   const store = createStore(
