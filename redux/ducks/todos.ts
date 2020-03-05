@@ -10,11 +10,7 @@ import {
   call, put, takeEvery,
 } from 'redux-saga/effects'
 import axios, { AxiosPromise, AxiosError } from 'axios'
-
-export type Todo = {
-  id: ReturnType<typeof uuidv4>;
-  title: string;
-}
+import { Todo } from '../../@types/types'
 
 export const todoActions = {
   addTodo: createAction(
