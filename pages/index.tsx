@@ -1,12 +1,16 @@
-import { NextPage } from "next"
-import styled from "styled-components"
+import { NextPage } from 'next'
+import { connect } from 'react-redux'
+import styled from 'styled-components'
 
 const H1 = styled.h1`
   background-color: red;
 `
 
-const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
-  <H1>Hello world! - user agent: {userAgent}</H1>
+const Home: NextPage<{ todos }> = ({ todos }) => (
+  <H1>
+    Do we quack? :
+    {todos.todos[0].title}
+  </H1>
 )
 
-export default Home
+export default connect((state) => state, {})(Home)
